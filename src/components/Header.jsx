@@ -5,9 +5,9 @@ export default function Header() {
         <header id="main-header">
             <div id='title'>
                 <img src={logo} alt="logo" />
-                <p>REACTFOOD</p>
-                <button >Cart</button>
+                <p >REACTFOOD</p>
             </div>
+            <button id="button">Cart (0)</button>
         </header>
     )
 }
