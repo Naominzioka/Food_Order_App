@@ -27,6 +27,13 @@ body {
   align-items: center;
 }
 
+#main-header #title p {
+  margin: 0;                   /* Removes default browser paragraph margin */
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffc404;
+}
+
 #main-header #title img {
   width: 4rem;
   height: 4rem;
