@@ -6,8 +6,7 @@ export default function Meals() {
     const { meals } = useContext(MealsContext)
 
     return (
-        <div id="meals">
-            <ul>
+            <ul id="meals">
                 {meals?.map((meal) => (
                     <li key={meal.id}>
                         <Meal {...meal} />
@@ -15,6 +14,5 @@ export default function Meals() {
                 ))}
 
             </ul>
-        </div>
     )
 }
