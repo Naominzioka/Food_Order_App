@@ -7,20 +7,30 @@ export const MealsContext = createContext({
 
 export function MealsContextProvider({ children }) {
     const [meals, setMeals] = useState();
+    const [error, setError] = useState(null)
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
         async function loadMeals() {
-            const response = await fetch('http://localhost:3000/meals');
-            const meals = await response.json();
-            setMeals(meals)
+            try {
+                const response = await fetch('http://localhost:3000/meals');
+
+                if (!response.ok) {
+                    throw new Error("Could not fetch meals.Check network.")
+                }
+                const meals = await response.json();
+                setMeals(meals)
+            }
+            catch (error) {
+                return setError(error.message || 'Could not fetch meals.')
+            }
         }
         loadMeals();
     }, []);
 
     const contextValue = {
         meals: meals,
-
     }
 
-return <MealsContext value={contextValue} >{children}</MealsContext>
+    return <MealsContext value={contextValue} >{children}</MealsContext>
 }

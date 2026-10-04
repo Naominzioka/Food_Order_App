@@ -1,8 +1,10 @@
+
 import Header from "./components/Header";
 import Meals from "./components/Meals";
 import {  MealsContextProvider } from "./store/meals_context";
 
 function App() {
+
   return (
     <>
       <Header />
