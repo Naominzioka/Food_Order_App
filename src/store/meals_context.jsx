@@ -6,7 +6,7 @@ export const MealsContext = createContext({
 })
 
 export function MealsContextProvider({ children }) {
-    const [meals, setMeals] = useState();
+    const [meals, setMeals] = useState([]);
     const [error, setError] = useState(null)
     const [loading, setLoading] = useState(false)
 
@@ -20,7 +20,7 @@ export function MealsContextProvider({ children }) {
                 }
                 const meals = await response.json();
                 setMeals(meals)
-            }
+            }  
             catch (error) {
                 return setError(error.message || 'Could not fetch meals.')
             }

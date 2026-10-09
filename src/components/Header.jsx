@@ -1,16 +1,19 @@
 import logo from '../assets/logo.jpg';
 import { useContext } from "react";
 import { CartContext } from "../store/cartContext";
+import Button from './UI/Button';
 
 export default function Header() {
-    const { cartCount} = useContext(CartContext);
+    const { cartCount } = useContext(CartContext);
     return (
         <header id="main-header">
             <div id='title'>
                 <img src={logo} alt="logo" />
-                <p >REACTFOOD</p>
+                <p  >REACTFOOD</p>
             </div>
-            <button id="button">Cart ({cartCount})</button>
+            <nav>
+                <Button textOnly>Cart ({cartCount})</Button>
+            </nav>
         </header>
     )
 }
