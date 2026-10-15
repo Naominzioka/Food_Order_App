@@ -1,5 +1,5 @@
 import MealItem from './MealItem'
-import { MealsContext } from '../store/meals_context'
+import { MealsContext } from '../store/MealsContext'
 import { useContext } from 'react'
 
 export default function Meals() {
@@ -9,7 +9,7 @@ export default function Meals() {
             <ul id="meals">
                 {meals?.map((meal) => (
                     <li key={meal.id}>
-                        <MealItem {...meal} />
+                        <MealItem meal={meal} />
                     </li>
                 ))}
 

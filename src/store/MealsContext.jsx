@@ -1,14 +1,14 @@
 import { createContext, useEffect, useState } from "react";
 
 export const MealsContext = createContext({
-    meals: null,
+    meals: [],
 
 })
 
 export function MealsContextProvider({ children }) {
     const [meals, setMeals] = useState([]);
-    const [error, setError] = useState(null)
-    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         async function loadMeals() {
@@ -34,3 +34,5 @@ export function MealsContextProvider({ children }) {
 
     return <MealsContext value={contextValue} >{children}</MealsContext>
 }
+
+export default MealsContext;
